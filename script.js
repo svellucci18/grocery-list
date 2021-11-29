@@ -31,6 +31,26 @@ var myContentEl = document.querySelector('#content-container');
          */
         function renderGroceryData( data ) {
 
+            
+            for(i = 0; i < myGroceryList.length; i++) {
+
+                var nameEl = document.createElement("h1"); 
+                
+                nameEl.textContent = myGroceryList[i].name;
+    
+                myContentEl.appendChild(nameEl);
+
+                var buttonEl = document.createElement("button");
+
+                buttonEl.setAttribute("data-incart", myGroceryList[i].isInCart);
+
+                myContentEl.appendChild(buttonEl);
+
+                buttonEl.textContent = "add to cart"
+
+            }
+
+
             // TODO: Create HTML to display the list of grocery `data` and append it to `myContentEl`. You should be able to view the item's name and image.
 
             // BONUS: Only display items that are not in the cart.
